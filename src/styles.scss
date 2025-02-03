@@ -1,0 +1,156 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin bg-colour() {
+    background-color: rgba(20, 29, 47, 1);
+  }
+  
+  @mixin primary() {
+    background-color: rgba(75, 71, 255, 1);
+  
+    &:hover {
+      background-color: rgb(25, 203, 162);
+      transform: scale(1.05);
+      transition: all 250ms ease-in-out;
+      box-shadow: 0 1px 8px rgba(255, 254, 254, 0.8);
+    }
+  
+    &:active {
+      transform: scale(0.95); 
+      box-shadow: 0 2px 4px rgb(255, 255, 255); 
+    }
+  }
+  
+  @mixin secondary() {
+    background-color: rgba(28, 230, 182, 1);
+  }
+  
+  @mixin dF($jc: center, $ai: center, $g: 0px) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+  }
+  
+  @mixin pad() {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  
+  @mixin glow {
+    cursor: pointer;
+  
+    &:hover {
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1));
+      transition: filter 0.2s ease;
+    }
+  
+    &:active {
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    }
+  }
+  
+  @mixin darkBlue {
+    color: rgba(75, 71, 255, 1);
+  }
+  
+  @mixin lightBlue {
+    color: rgba(28, 230, 182, 1);
+  }
+  
+  * {
+    margin: 0;
+    font-family: "Poppins";
+    font-size: 16px;
+    color: white;
+    scroll-behavior: smooth;
+  }
+  
+  @mixin contentmax(){
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  html{
+    overflow-x: hidden;
+  }
+  
+  body {
+    @include bg-colour();
+  }
+  
+  a {
+    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  h1 {
+    font-weight: 700;
+    font-size: 72px;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 32px;
+    @include lightBlue();
+    margin: 0;
+    padding: 0;
+  }
+  
+  h3 {
+    font-weight: 400;
+    font-size: 23px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* poppins-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/poppins-v20-latin-regular.woff2")
+      format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* poppins-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    src: url("./assets/fonts/poppins-v20-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* poppins-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/poppins-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* poppins-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/poppins-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  .btn-primary {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    border: none;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  

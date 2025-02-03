@@ -1,0 +1,100 @@
+<section id="contact">
+  <div class="content">
+    <div class="headline">
+      <div class="line"></div>
+      <h1>Contact</h1>
+    </div>
+
+    <div class="elements">
+      <div class="left">
+        <span class="subtitle">If you want a job done well, hire a professional.</span>
+          <h3>Contact me!</h3> 
+          <p>
+          <br>
+          Contact me through this form, I am interested in hearing from you.  
+        </p>
+      </div>
+      <div class="right">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+          <input
+            [(ngModel)]="contactData.name"
+            name="name"
+            #nameField="ngModel"
+            type="text"
+            placeholder="Your name"
+            class="input-field"
+            required
+          />
+          <div class="error">
+            @if (nameField.invalid && nameField.touched) { Name is required. }
+          </div>
+          <input
+            [(ngModel)]="contactData.email"
+            name="email"
+            type="email"
+            #emailField="ngModel"
+            placeholder="Your email"
+            class="input-field"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          />
+          <div class="error">
+            @if (emailField.invalid && emailField.touched) { Email is required.
+            }
+          </div>
+          <textarea
+            minlength="4"
+            [(ngModel)]="contactData.message"
+            class="input-field ip3"
+            name="message"
+            #messageField="ngModel"
+            placeholder="Your message"
+            rows="30"
+            cols="50"
+            required
+          >
+          
+        </textarea>
+        <div class="error">
+          @if (messageField.invalid && messageField.touched) { Message is required.
+          }
+        </div>
+          <div class="checkbox">
+            @if (isChecked) {
+
+            <img
+              src="./assets/img/06_contact/Property 1=Default.png"
+              (click)="toggleCheckbox()"
+              alt="checkbox-checked"
+            />
+            } @else {
+
+            <img
+              src="./assets/img/06_contact/Property 1=Default.png"
+              (click)="toggleCheckbox()"
+              alt="checkbox-unchecked"
+            />
+            }
+
+            <p>
+              I've read the <a href="">privacy policy</a> and agree to the
+              processing of my data as outlined.
+            </p>
+            @if (formSubmitted && !isChecked) {
+            <p class="error-message" style="color: red">
+              Please accept the privacy policy.
+            </p>
+            }
+          </div>
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="btn-primary"
+          >
+            Send message!
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
